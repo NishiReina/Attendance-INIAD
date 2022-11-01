@@ -14,7 +14,7 @@ class LoginWithGoogleController extends Controller
         return Socialite::driver("google")->redirect();
     }
 
-    public function authGoogleCallback()
+    public function authGoogleCallback(Request $request)
     {
         $googleUser = Socialite::driver('google')->stateless()->user();
         $user = User::firstOrCreate([
