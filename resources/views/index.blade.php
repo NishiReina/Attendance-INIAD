@@ -81,7 +81,7 @@
         $.ajax({
             type: "POST", 
             url: "/", //　送り先
-            data: { 'データ': data }, //　渡したいデータをオブジェクトで渡す
+            data: { 'data': data }, //　渡したいデータをオブジェクトで渡す
             dataType : "json", //　データ形式を指定
             scriptCharset: 'utf-8', //　文字コードを指定
             headers: {
@@ -146,6 +146,29 @@
 
 
 <script>
+
+function attendance(data){
+        console.log("test1");
+        // const data = 'Hello World！'; // 渡したいデータ
+
+        $.ajax({
+            type: "POST", 
+            url: "/", //　送り先
+            data: { 'data': data }, //　渡したいデータをオブジェクトで渡す
+            dataType : "json", //　データ形式を指定
+            scriptCharset: 'utf-8', //　文字コードを指定
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content'),
+            }
+        })
+        .then(
+            function(param){　 //　paramに処理後のデータが入って戻ってくる
+                console.log(param); //　帰ってきたら実行する処理
+            },
+            function(XMLHttpRequest, textStatus, errorThrown){ //　エラーが起きた時はこちらが実行される
+                console.log(XMLHttpRequest); //　エラー内容表示
+        });
+}
 
 function onWatchAdvertisementsButtonClick() {
   let service_uuid = "0000b81d-0000-1000-8000-00805f9b34fb"

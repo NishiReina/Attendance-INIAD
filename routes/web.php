@@ -32,4 +32,6 @@ Route::middleware([
     })->name('dashboard');
     Route::get('/',[AttendanceController::class, 'index']);
     Route::post('/',[AttendanceController::class, 'store']);
+
+    Route::get('/teacher/attendance', [AttendanceController::class, 'show']);
 });
