@@ -2,11 +2,19 @@
 
 @section('content')
 
+<h1>{{$today->toDateString()}}</h1>
 @foreach($attendances as $attendance)
 <div class="attendance">
-    <p class="student__name">{{$attendance->user->name}}</p>
-    <p class="student__email">{{$attendance->user->email}}</p>
-    <p class="day">{{$attendance->created_at}}</p>
+    <table>
+        <tr>
+            <th>名前：</th>
+            <td>{{$attendance->user->name}}</td>
+        </tr>
+        <tr>
+            <th>メールアドレス：</th>
+            <td>{{$attendance->user->email}}</td>
+        </tr>
+    </table>
 </div>
 
 @endforeach

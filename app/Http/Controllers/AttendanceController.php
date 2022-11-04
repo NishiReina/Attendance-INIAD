@@ -24,13 +24,14 @@ class AttendanceController extends Controller
         return response()->json([
             'data' => $request->data,
         ], 200);
+
     }
 
     public function show(Request $request){
 
         $today = Carbon::today();
         $attendances = Attendance::whereDate('created_at', $today)->with('user')->get();
-        return view('teacher.index', compact('attendances'));
+        return view('teacher.index', compact('attendances','today'));
     }
 
 }
