@@ -43,3 +43,6 @@ Route::get('/',[AttendanceController::class, 'index']);
 Route::post('/',[AttendanceController::class, 'store']);
 
 Route::get('/teacher/attendance', [AttendanceController::class, 'show']);
+
+// ミドルウェアの外にルートの情報を記述するとHeroku上でも問題なく表示される
+// やはり、Googleログイン認証が問題？
