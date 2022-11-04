@@ -15,12 +15,12 @@ class AttendanceController extends Controller
 
     public function store(Request $request){
 
-        $user_id = Auth::id();
-        $form = [
-            'user_id' => $user_id,
-            'data' => $request->data
-        ];
-        Attendance::create($form);
+        // $user_id = Auth::id();
+        // $form = [
+        //     'user_id' => $user_id,
+        //     'data' => $request->data
+        // ];
+        // Attendance::create($form);
         return response()->json([
             'data' => $request->data,
         ], 200);
