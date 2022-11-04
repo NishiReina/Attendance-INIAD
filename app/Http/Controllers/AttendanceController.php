@@ -21,6 +21,7 @@ class AttendanceController extends Controller
         //     'data' => $request->data
         // ];
         // Attendance::create($form);
+        dd($request->data);
         return response()->json([
             'data' => $request->data,
         ], 200);
