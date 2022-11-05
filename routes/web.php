@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LoginWithGoogleController;
 use App\Http\Controllers\AttendanceController;
+use App\Http\Controllers\TeacherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -43,6 +44,7 @@ Route::get('/',[AttendanceController::class, 'index']);
 Route::post('/',[AttendanceController::class, 'store']);
 
 Route::get('/teacher/attendance', [AttendanceController::class, 'show']);
+Route::get('/teacher/id', [TeacherController::class, 'unique_id']);
 
 // ミドルウェアの外にルートの情報を記述するとHeroku上でも問題なく表示される
 // やはり、Googleログイン認証が問題？
