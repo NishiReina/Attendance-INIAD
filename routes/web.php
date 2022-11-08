@@ -31,10 +31,15 @@ Route::middleware([
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    Route::get('/',[AttendanceController::class, 'index']);
+    // Route::get('/',[AttendanceController::class, 'index']);
+    // Route::post('/',[AttendanceController::class, 'store']);
+    
+    // Route::get('/teacher/attendance', [AttendanceController::class, 'show']);
+    // Route::get('/teacher/id', [TeacherController::class, 'unique_id']);
+});
+
+Route::get('/',[AttendanceController::class, 'index']);
     Route::post('/',[AttendanceController::class, 'store']);
     
     Route::get('/teacher/attendance', [AttendanceController::class, 'show']);
     Route::get('/teacher/id', [TeacherController::class, 'unique_id']);
-});
-
