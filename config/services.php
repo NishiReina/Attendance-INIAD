@@ -31,10 +31,16 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    // 'google' => [
+    //     'client_id' => env('GOOGLE_KEY'), 
+    //     'client_secret' => env('GOOGLE_SECRET'), 
+    //     'redirect' => env('GOOGLE_REDIRECT_URI'), 
+    // ],
+
     'google' => [
-        'client_id' => env('GOOGLE_KEY'), 
-        'client_secret' => env('GOOGLE_SECRET'), 
-        'redirect' => env('GOOGLE_REDIRECT_URI'), 
+        'client_id' => "799330281556-1sqc1kpaq3aksnvbechdu5mvg1l685hi.apps.googleusercontent.com", 
+        'client_secret' => "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" , 
+        'redirect' => "https://warm-shore-22618.herokuapp.com/auth/google/callback", 
     ],
 
 ];
